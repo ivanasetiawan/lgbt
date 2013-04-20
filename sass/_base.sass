@@ -1,24 +1,24 @@
 // Compass imports & mixins
 @import "compass"
 
-// Font face
-@font-face
-  font-family: 'lavanderia_delicate'
-  src: url('../fonts/lavanderia_delicate-webfont.eot')
-  src: local('☺'), url('../fonts/lavanderia_delicate-webfont.woff') format('woff'), url('../fonts/lavanderia_delicate-webfont.ttf') format('truetype'), url('../fonts/lavanderia_delicate-webfont.svg') format('svg')
-  font-style: normal
+// // Font face
+// @font-face
+//   font-family: 'lavanderia_delicate'
+//   src: url('../fonts/lavanderia_delicate-webfont.eot')
+//   src: local('☺'), url('../fonts/lavanderia_delicate-webfont.woff') format('woff'), url('../fonts/lavanderia_delicate-webfont.ttf') format('truetype'), url('../fonts/lavanderia_delicate-webfont.svg') format('svg')
+//   font-style: normal
 
-@font-face
-  font-family: 'lavanderia_regular'
-  src: url('../fonts/lavanderia_regular-webfont.eot')
-  src: local('☺'), url('../fonts/lavanderia_regular-webfont.woff') format('woff'), url('../fonts/lavanderia_regular-webfont.ttf') format('truetype'), url('../fonts/lavanderia_regular-webfont.svg') format('svg')
-  font-style: normal
+// @font-face
+//   font-family: 'lavanderia_regular'
+//   src: url('../fonts/lavanderia_regular-webfont.eot')
+//   src: local('☺'), url('../fonts/lavanderia_regular-webfont.woff') format('woff'), url('../fonts/lavanderia_regular-webfont.ttf') format('truetype'), url('../fonts/lavanderia_regular-webfont.svg') format('svg')
+//   font-style: normal
 
-@font-face
-  font-family: 'lavanderia_sturdy'
-  src: url('../fonts/lavanderia_sturdy-webfont.eot')
-  src: local('☺'), url('../fonts/lavanderia_sturdy-webfont.woff') format('woff'), url('../fonts/lavanderia_sturdy-webfont.ttf') format('truetype'), url('../fonts/lavanderia_sturdy-webfont.svg') format('svg')
-  font-style: normal
+// @font-face
+//   font-family: 'lavanderia_sturdy'
+//   src: url('../fonts/lavanderia_sturdy-webfont.eot')
+//   src: local('☺'), url('../fonts/lavanderia_sturdy-webfont.woff') format('woff'), url('../fonts/lavanderia_sturdy-webfont.ttf') format('truetype'), url('../fonts/lavanderia_sturdy-webfont.svg') format('svg')
+//   font-style: normal
 
 =data-uri-bg($image, $properties: false)
   @if $properties != false
@@ -41,21 +41,15 @@
 
 // Variable
 $fontFamily: 'Enriqueta', 'Helvetica Neue', Helvetica, Arial, Sans-Serif
-$titleFont: 'Enriqueta', 'Helvetica Neue', Helvetica, Arial, Sans-Serif
-$codeFont: 'Oxygen Mono', courier, Sans-Serif
-$fontColor: #39321f
+$titleFont: 'Elsie Swash Caps', 'Helvetica Neue', Helvetica, Arial, Sans-Serif
+$codeFont: courier, Sans-Serif
+$fontColor: #333
 $altColor: #75b4c2
 $lightColor: #b2cf53
 
-=handWritingLight
-  font-family: 'lavanderia_delicate', $fontFamily
-
-=handWritingReg
-  font-family: 'lavanderia_regular', $fontFamily
-
 =handWritingBold
-  font-family: 'lavanderia_sturdy', $fontFamily
-  text-transform: lowercase
+  font-family: $titleFont, $fontFamily
+  font-weight: bold
 
 @function bgColor($opacity)
   @return rgba(225,218,212,$opacity)
@@ -79,10 +73,15 @@ $lightColor: #b2cf53
   color: #111
   text-shadow: none
 
+%clear-list
+  margin: 0
+  padding: 0
+  list-style: none
+
 a
   text-decoration: none
   color: $altColor
-  border-bottom: dashed 1px $altColor
+  //border-bottom: dashed 1px $altColor
 
   &:hover
     color: $fontColor
@@ -93,13 +92,14 @@ em
   +opacity(0.8)
 
 body
+  margin: 0
+  padding: 0
   font-family: $fontFamily
-  /* The font-size is now 0.625 * 16px = 10px. */
-  font-size: 0.625em
-  /* The leading is now 25 pixels. */
-  line-height: 2.5em
   color: $fontColor
   +retina-image("light_toast", "png", 200px 200px, repeat)
+
+h1
+  margin: 0
 
 .wrap
   max-width: 700px
